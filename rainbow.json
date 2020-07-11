@@ -1,0 +1,14 @@
+{
+    "rainbowdelay": 5000,
+    "rainbowcommand": "on",
+    "rainbowstop": "stop",
+    "rainbowrole": [
+        "RANDOM"
+    ],
+    "messageresponse": {
+        "missingperm": "I need permission 'MANAGE_ROLES' to execute this action.",
+        "success": "Rainbow Telah Di Aktifkan!!!",
+        "rainbowstop": "Rainbow Telah Di Hentikan !!",
+        "rolenotfound": "The requested role you typed was not found"
+    }
+}
