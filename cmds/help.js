@@ -3,11 +3,12 @@ const discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
 
     let embed = new discord.RichEmbed()
-        .setAuthor(`${bot.user.username} Command`, bot.user.avatarURL)
+        .setAuthor(bot.user.username, bot.user.avatarURL)
         .setColor('RANDOM')
         .setThumbnail(bot.user.avatarURL)
-        .setTitle('Prefix : `Hfc.`')
+        .setTitle(`${bot.user.username} Command`)
         .setDescription('**Bot Auto Create Voice Channel official Server ◣Have Fun Country◥** :relaxed:   ``-=- Help -=- <>: MUST, []: OPTIONAL``')
+        .addField('Prefix','`Hfc.`')
         .addField(`● lock`, 'Untuk mengunci voice channel kamu')
         .addField(`● unlock`, 'Untuk membuka voice channel kamu')
         .addField(`● name`, 'Untuk mengubah nama voice channel kamu')
