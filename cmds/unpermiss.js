@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args,) => {
 
        VC.overwritePermissions(user, {
           
-        CONNECT: false
+        CONNECT: null
     })
     message.reply(`Successfully to give ${user} permissions`)
     
