@@ -44,7 +44,7 @@ client.on("ready", message => {
       //type: "LISTENING"
    // }
       {
-      nama: `Hvc.help|${client.channels.size}`,
+      nama: `Hfc.help|${client.channels.size}`,
       type: "WATCHING"
     }
   ];
@@ -156,4 +156,4 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
   
 
 
-client.login("NjMzMjk2MTI0ODk5NDkxODYy.Xwf_TQ.S7jLqZ9YUduUfpVOToQNjr_xkj4");
+client.login(process.env.token);
