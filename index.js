@@ -44,7 +44,7 @@ client.on("ready", message => {
       //type: "LISTENING"
    // }
       {
-      nama: `Hfc.help|${client.channels.size}`,
+      nama: `Hfc.help|${client.channels.size} Channels`,
       type: "WATCHING"
     }
   ];
@@ -131,6 +131,48 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
              // })
                  // A new element has been added to temporary array!
                  await newMember.setVoiceChannel(channel.id)
+		 
+             })
+     }
+
+    // if(newMember.overwritePermissions("MANAGE_CHANNELS")) {
+
+
+   //  }
+
+     if(temporary.length >= 0) for(let i = 0; i < temporary.length; i++) {
+         // Finding...
+         let ch = temporary[i].guild.channels.find(x => x.id == temporary[i].newID)
+         // Channel Found!         
+         if(ch.members.size <= 0){
+
+             await ch.delete()
+             // Channel has been deleted!
+             return temporary.splice(i, 1)
+         }
+     }
+
+
+});
+
+client.on('voiceStateUpdate', async (oldMember, newMember) => {
+  const mainCatagory = '687158226504253457';
+     const mainChannel = '687158810284130329';
+
+     if(newMember.voiceChannelID == mainChannel){
+        // Create channel...
+         await newMember.guild.createChannel(`💝◆${newMember.user.username}'s Private`, {type: 'voice', parent: mainCatagory})
+             .then(async channel => {
+                 temporary.push({ newID: channel.id, guild: channel.guild })
+                 
+                 channel.overwritePermissions(newMember.id, {
+          
+                  MANAGE_CHANNELS: true,
+		  MANAGE_PERSMISSIONS: true 
+             })
+                 // A new element has been added to temporary array!
+                 await newMember.setVoiceChannel(channel.id)
+		 await channel.setUserLimit(2)
              })
      }
 
