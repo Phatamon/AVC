@@ -3,12 +3,14 @@ module.exports.run = async (client, message, args,) => {
     //let ow = message.channel.permissionOverwrites.get(message.author.id)
     if (message.channel.name !== "《setting-rooms》")
     return message.reply("Gunakan Di 《setting-rooms》");
-    if (!message.channel.permissionsFor(message.member).has('MANAGE_CHANNELS')) {
-        return message.reply('Only owner channel can use this command');
-    } 
+   if(VC.permissionsFor(message.author).has('MANAGE_CHANNELS')) {
         VC.setName(args.join(' '));
         message.reply(`Successfully change channels name to **${args.join(' ')}**`)
-    
+     } else{
+    // if(message.channel.permissionsFor(message.author).has('MANAGE_CHANNELS')=== true) 
+     return message.reply("Only owner channel can use this command") 
+
+    }
        
     
     // if(message.channel.permissionsFor(message.author).has('MANAGE_CHANNELS')=== true) 
