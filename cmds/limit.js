@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args,) => {
        
     } else{
     // if(message.channel.permissionsFor(message.author).has('MANAGE_CHANNELS')=== true) 
-     return message.channel.send("Only owner channel can use this command") 
+     return message.reply("Only owner channel can use this command") 
 
     }
     
