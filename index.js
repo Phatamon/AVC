@@ -125,15 +125,28 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
              .then(async channel => {
                  temporary.push({ newID: channel.id, guild: channel.guild })
                  
-                 //channel.overwritePermissions(newMember.id, {
+                 channel.overwritePermissions(newMember.id, {
           
-                  //MANAGE_CHANNELS: true
-             // })
+                  MANAGE_CHANNELS: true
+              })
                  // A new element has been added to temporary array!
                  await newMember.setVoiceChannel(channel.id)
-		 
              })
      }
+
+     if(oldMember.voiceChannelID) {
+
+      const lama = oldMember.guild.channels.get(oldMember.voiceChannelID)
+
+      if(lama.permissionsFor(oldMember.id).has('MANAGE_CHANNELS')) {//.startsWith(channel)) {
+        
+        lama.overwritePermissions(newMember.id, {
+          
+          MANAGE_CHANNELS: null
+      })
+      }
+    }
+ // })
 
     // if(newMember.overwritePermissions("MANAGE_CHANNELS")) {
 
@@ -168,7 +181,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
                  channel.overwritePermissions(newMember.id, {
           
                   MANAGE_CHANNELS: true,
-		  MANAGE_PERSMISSIONS: true 
+		  MANAGE_PERMISSIONS: true 
              })
                  // A new element has been added to temporary array!
                  await newMember.setVoiceChannel(channel.id)
