@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, args) => {
         .setDescription('**Bot Auto Create Voice Channel official Server ◣Have Fun Country◥** :relaxed:   ``-=- Help -=- <>: MUST, []: OPTIONAL``')
         .addField('Prefix','`Hfc.`')
         .addField(`● lock`, 'Untuk mengunci voice channel kamu')
+        .addField(`● claim`, 'Untuk mengambil alih voice channel yang tidak ada ownernya')
         .addField(`● unlock`, 'Untuk membuka voice channel kamu')
         .addField(`● name`, 'Untuk mengubah nama voice channel kamu')
         .addField(`● limit <angka>`, 'Untuk mengatur jumlah user yang boleh join di voice channel kamu')
