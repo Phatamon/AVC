@@ -5,7 +5,8 @@ module.exports.run = async (client, message, args,) => {
     return message.reply("Gunakan Di 《setting-rooms》");
    if(VC.permissionsFor(message.author).has('MANAGE_CHANNELS')) {
         VC.setName(args.join(' '));
-        message.reply(`Successfully change channels name to **${args.join(' ')}**`)
+        message.react("☑");
+        
      } else{
     // if(message.channel.permissionsFor(message.author).has('MANAGE_CHANNELS')=== true) 
      return message.reply("Only owner channel can use this command") 
