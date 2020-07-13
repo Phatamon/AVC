@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args,) => {
           
             CONNECT: true
         })
-        message.reply(`Successfully to give ${user} permissions`)
+       message.react("☑");
     
        
     } else{
