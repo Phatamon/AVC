@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args,) => {
           
             CONNECT: true
         })
-        message.reply(`Successfully lock your channels`)
+        message.react("☑");
     
        
    } else{
