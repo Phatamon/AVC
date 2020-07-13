@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args,) => {
           
             MANAGE_CHANNELS: true
         })
-        message.reply(`Successfully to give owner this channel to you !`)
+       message.react("☑");
     }
 
 };
