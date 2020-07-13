@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args,) => {
         VC.overwritePermissions(message.guild.roles.find('name', '@everyone'), {
             'CONNECT': true
         }); 
-        message.reply(`Successfully lock your channels`)
+        message.react("☑");
     
        
     } else{
