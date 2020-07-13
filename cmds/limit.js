@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args,) => {
     return message.reply("Gunakan Di 《setting-rooms》");
     if(VC.permissionsFor(message.author).has('MANAGE_CHANNELS')) {
         VC.setUserLimit(args[0]);
-        message.reply(`Successfully set the channel to limit ${args[0]}`)
+        message.react("☑");
     
        
     } else{
