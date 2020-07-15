@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args,) => {
     return message.reply("Gunakan Di 《setting-rooms》");
 
     if(VC.permissionsFor(message.author).has('MANAGE_CHANNELS')) {
-        return message.reply("You are owner this channel !")
+        return message.reply("Kamu adalah owner dari chanel ini !")
     } else{
         VC.overwritePermissions(message.author, {
           
