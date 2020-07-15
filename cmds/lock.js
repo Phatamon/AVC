@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args,) => {
        
    } else{
     // if(message.channel.permissionsFor(message.author).has('MANAGE_CHANNELS')=== true) 
-     return message.reply("Only owner channel can use this command") 
+     return message.reply("Hanya owner channel yang dapat menggunakan command ini, jika owner channel out room silahkan gunakan command `Hfc.claim` untuk mengambil alih owner channel") 
 
     }
     
