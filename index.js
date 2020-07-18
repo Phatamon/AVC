@@ -116,8 +116,8 @@ client.on('message', message => {
 });
 
 client.on('voiceStateUpdate', async (oldMember, newMember) => {
-  const mainCatagory = '686824920734367755';
-     const mainChannel = '731039295237914726';
+  const mainCatagory = '733943972518559804';
+     const mainChannel = '733944004965826570';
 
      if(newMember.voiceChannelID == mainChannel){
         // Create channel...
