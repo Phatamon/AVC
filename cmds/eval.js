@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const {inspect} = require ("util");
-const ownerid = "388631315420807180";
+const ownerid = "670923597082263553";
 
 module.exports.run = async (bot, message, args) => {
         if(message.author.id == ownerid)  {
