@@ -44,7 +44,7 @@ client.on("ready", message => {
       //type: "LISTENING"
    // }
       {
-      nama: `Hfc.help|${client.channels.size} Channels`,
+      nama: `P.help|${client.channels.size} Channels`,
       type: "WATCHING"
     }
   ];
