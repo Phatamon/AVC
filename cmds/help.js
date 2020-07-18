@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(bot.user.avatarURL)
         .setTitle(`${bot.user.username} Command`)
         .setDescription('**Bot Auto Create Voice Channel official Server ◣Have Fun Country◥** :relaxed:   ``-=- Help -=- <>: MUST, []: OPTIONAL``')
-        .addField('Prefix','`Hfc.`')
+        .addField('Prefix','`P.`')
         .addField(`● lock`, 'Untuk mengunci voice channel kamu')
         .addField(`● claim`, 'Untuk mengambil alih voice channel yang tidak ada ownernya')
         .addField(`● unlock`, 'Untuk membuka voice channel kamu')
