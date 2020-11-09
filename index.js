@@ -44,7 +44,7 @@ client.on("ready", message => {
       //type: "LISTENING"
    // }
       {
-      nama: `P.help|${client.channels.size} Channels`,
+      nama: `A.help|${client.channels.size} Channels`,
       type: "WATCHING"
     }
   ];
@@ -116,8 +116,8 @@ client.on('message', message => {
 });
 
 client.on('voiceStateUpdate', async (oldMember, newMember) => {
-  const mainCatagory = '733943972518559804';
-     const mainChannel = '733944004965826570';
+  const mainCatagory = '772441130855694336';
+     const mainChannel = '775267107008806952';
 
      if(newMember.voiceChannelID == mainChannel){
         // Create channel...
