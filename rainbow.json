@@ -3,10 +3,7 @@
     "rainbowcommand": "on",
     "rainbowstop": "stop",
     "rainbowrole": [
-        "#d31414",
-        "#d31414",
-        "#6af53b",
-        "#271aeb"
+        "RANDOM"
     ],
     "messageresponse": {
         "missingperm": "I need permission 'MANAGE_ROLES' to execute this action.",
