@@ -33,25 +33,62 @@ client.on('message', async message => { // eslint-disable-line
 client.on("ready", message => {
   console.log(`BOT SIAP BERMAIN DI ${client.guilds.size} SERVER !!`);
   client.user.setActivity("iMighty");
-  const list = [
-   
-    //{
-     // nama: `📡│${client.guilds.size} SERVER`,
-    // type: "WATCHING"
-    //},
-   // {
-     // nama: `👤│${client.users.size} MEMBER`,
-      //type: "LISTENING"
-   // }
-      {
-      nama: `A.help|${client.channels.size} Channels`,
-      type: "WATCHING"
-    }
-  ];
-  setInterval(() => {
-    const tex = list[Math.floor(Math.random() * list.length)];
-    client.user.setActivity(tex.nama, { type: tex.type });
-  }, 5000);
+  const status = 
+      `A.help||Create Channel`
+	    
+   // let random = Math.floor(Math.random() * status.length);
+    client.user.setPresence({
+      game: {
+        name: status,
+        type: "watching",
+        //url: "https://www.twitch.tv/elarsyah"
+      }
+    });
+		/////////////////////////// SERVER STAAT//////////////////////////////////////////
+const guild = client.guilds.get('758869557187969036');
+
+
+const totalm = client.channels.get('775649116055142421');  
+const voice = client.channels.get('775649176422842378');
+const text = client.channels.get('775649193662087168');
+const role = client.channels.get('775649213027057695');  
+
+  
+setInterval(function() {
+
+  
+  var totalmCount = guild.memberCount;
+  var userCount  = guild.members.filter(m => !m.user.bot).size;
+  var botCount  = guild.members.filter(m => m.user.bot).size;
+  var voiceCount = guild.channels.filter(m => m.type == 'voice').size;
+  var textCount = guild.channels.filter(m => m.type == 'text').size;
+  var roleCount = guild.roles.filter(m => !m.roles).size;
+  var onlineCount = guild.members.filter(m => m.presence.status === 'online').size + guild.members.filter(m => m.presence.status === 'idle').size + guild.members.filter(m => m.presence.status === 'dnd').size;
+  var offlineCount = guild.members.filter(m => m.presence.status === 'offline').size;
+  
+
+  totalm.setName("🔱┇All Members : " + totalmCount)
+  //.then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
+//  .catch(console.error);
+  
+ 
+  
+  voice.setName("🔱┇Voice Channels : " + voiceCount)
+ // .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
+ // .catch(console.error);
+
+  text.setName("🔱┇Text Channels : " + textCount)
+ // .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
+ // .catch(console.error);
+
+  role.setName("🔱┇Roles : " + roleCount)
+ // .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
+ // .catch(console.error);
+
+  
+ 
+  
+  }, 10000)
 });
 
 
@@ -90,30 +127,29 @@ client.on("ready", message => {
 
 
 
-client.on('message', message => {
-    let messageArray = message.content.split(" ");
-    let command = messageArray[0];
-    let args = messageArray.slice(1);
-    if(command === config.prefix + settings.rainbowcommand) {
-        const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
-        if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
-        if(!message.guild.member(client.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
-        var colors = settings.rainbowrole
-        var rolestart = setInterval(function() {
-            var colorsz = colors[Math.floor(Math.random() * colors.length)];
-            rolez.setColor(colorsz)
-        }, settings.rainbowdelay); 
-            message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
+//client.on('message', message => {
+   // let messageArray = message.content.split(" ");
+   // let command = messageArray[0];
+   // let args = messageArray.slice(1);
+   // if(command === config.prefix + settings.rainbowcommand) {
+      //  const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
+       // if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
+       // if(!message.guild.member(client.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
+       // var colors = settings.rainbowrole
+      //  var rolestart = setInterval(function() {
+       //     var colorsz = colors[Math.floor(Math.random() * colors.length)];
+        //    rolez.setColor(colorsz)
+     //   }, settings.rainbowdelay); 
+      //      message.channel.send(settings.messageresponse.success).catch(err=> message.channel.send("No response"))
 
-    }
-    if(command === config.prefix + settings.rainbowstop) {
-            setTimeout(function () {
-           process.exit()
-            }, 1000);
-               message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
-                       }
+  //  }
+  //  if(command === config.prefix + settings.rainbowstop) {
+   //         setTimeout(function () {
+    //       process.exit()
+    ///          message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
+           //            }
 	
-});
+//});
 
 client.on('voiceStateUpdate', async (oldMember, newMember) => {
   const mainCatagory = '772441130855694336';
@@ -168,46 +204,29 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
 
 });
 
+//////////////////////////// ROLE VOICE //////////////////////
 client.on('voiceStateUpdate', async (oldMember, newMember) => {
-  const mainCatagory = '687158226504253457';
-     const mainChannel = '687158810284130329';
 
-     if(newMember.voiceChannelID == mainChannel){
-        // Create channel...
-         await newMember.guild.createChannel(`💝◆${newMember.user.username}'s Private`, {type: 'voice', parent: mainCatagory})
-             .then(async channel => {
-                 temporary.push({ newID: channel.id, guild: channel.guild })
-                 
-                 channel.overwritePermissions(newMember.id, {
-          
-                  MANAGE_CHANNELS: true,
-		  MANAGE_PERMISSIONS: true 
-             })
-                 // A new element has been added to temporary array!
-                 await newMember.setVoiceChannel(channel.id)
-		 await channel.setUserLimit(2)
-             })
-     }
+  let role = newMember.guild.roles.find("name", "📣|IN VOICE")
+  //newMember.guild.channels.forEach(channel => { 
+    if(newMember.voiceChannelID){
+      
+      newMember.addRole(role.id)
 
-    // if(newMember.overwritePermissions("MANAGE_CHANNELS")) {
+    }
 
+    if(oldMember.voiceChannelID) {
 
-   //  }
+      const lama = oldMember.guild.channels.get(oldMember.voiceChannelID)
 
-     if(temporary.length >= 0) for(let i = 0; i < temporary.length; i++) {
-         // Finding...
-         let ch = temporary[i].guild.channels.find(x => x.id == temporary[i].newID)
-         // Channel Found!         
-         if(ch.members.size <= 0){
+      if(lama) {//.startsWith(channel)) {
+        oldMember.removeRole(role.id)
+      }
+    }
+ // })
 
-             await ch.delete()
-             // Channel has been deleted!
-             return temporary.splice(i, 1)
-         }
-     }
+  });
 
-
-});
   
 
 
