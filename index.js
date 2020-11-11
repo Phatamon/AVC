@@ -207,11 +207,11 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
 //////////////////////////// ROLE VOICE //////////////////////
 client.on('voiceStateUpdate', async (oldMember, newMember) => {
 
-  let role = newMember.guild.roles.find("name", "📣|IN VOICE")
+  //let role = newMember.guild.roles.find("name", "📣|IN VOICE")
   //newMember.guild.channels.forEach(channel => { 
     if(newMember.voiceChannelID){
       
-      newMember.addRole(role.id)
+      newMember.addRole("775940050068045894")
 
     }
 
@@ -220,7 +220,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
       const lama = oldMember.guild.channels.get(oldMember.voiceChannelID)
 
       if(lama) {//.startsWith(channel)) {
-        oldMember.removeRole(role.id)
+        oldMember.removeRole("775940050068045894")
       }
     }
  // })
