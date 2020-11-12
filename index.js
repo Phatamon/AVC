@@ -44,54 +44,7 @@ client.on("ready", message => {
         //url: "https://www.twitch.tv/elarsyah"
       }
     });
-		/////////////////////////// SERVER STAAT//////////////////////////////////////////
-const guild = client.guilds.get('758869557187969036');
-
-
-const totalm = client.channels.get('775649116055142421');  
-const voice = client.channels.get('775649176422842378');
-const text = client.channels.get('775649193662087168');
-const role = client.channels.get('775649213027057695');  
-
-  
-setInterval(function() {
-
-  
-  var totalmCount = guild.memberCount;
-  var userCount  = guild.members.filter(m => !m.user.bot).size;
-  var botCount  = guild.members.filter(m => m.user.bot).size;
-  var voiceCount = guild.channels.filter(m => m.type == 'voice').size;
-  var textCount = guild.channels.filter(m => m.type == 'text').size;
-  var roleCount = guild.roles.filter(m => !m.roles).size;
-  var onlineCount = guild.members.filter(m => m.presence.status === 'online').size + guild.members.filter(m => m.presence.status === 'idle').size + guild.members.filter(m => m.presence.status === 'dnd').size;
-  var offlineCount = guild.members.filter(m => m.presence.status === 'offline').size;
-  
-
-  totalm.setName("🔱┇All Members : " + totalmCount)
-  //.then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
-//  .catch(console.error);
-  
- 
-  
-  voice.setName("🔱┇Voice Channels : " + voiceCount)
- // .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
- // .catch(console.error);
-
-  text.setName("🔱┇Text Channels : " + textCount)
- // .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
- // .catch(console.error);
-
-  role.setName("🔱┇Roles : " + roleCount)
- // .then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
- // .catch(console.error);
-
-  
- 
-  
-  }, 10000)
-});
-
-
+		
 //function botStatus() {
   //let waktu2 = client.channels.find("id", "696197547038998568");
 //waktu2.setName(
@@ -205,27 +158,27 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
 });
 
 //////////////////////////// ROLE VOICE //////////////////////
-client.on('voiceStateUpdate', async (oldMember, newMember) => {
+//client.on('voiceStateUpdate', async (oldMember, newMember) => {
 
   //let role = newMember.guild.roles.find("name", "📣|IN VOICE")
   //newMember.guild.channels.forEach(channel => { 
-    if(newMember.voiceChannelID){
+  //  if(newMember.voiceChannelID){
       
-      newMember.addRole("775940050068045894")
+  //    newMember.addRole("775940050068045894")
 
-    }
+ //   }
 
-    if(oldMember.voiceChannelID) {
+ //  if(oldMember.voiceChannelID) {
 
-      const lama = oldMember.guild.channels.get(oldMember.voiceChannelID)
+  //    const lama = oldMember.guild.channels.get(oldMember.voiceChannelID)
 
-      if(lama) {//.startsWith(channel)) {
-        oldMember.removeRole("775940050068045894")
-      }
+  //    if(lama) {//.startsWith(channel)) {
+  //      oldMember.removeRole("775940050068045894")
+  //    }
     }
  // })
 
-  });
+ // });
 
   
 
